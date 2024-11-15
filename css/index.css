@@ -155,7 +155,7 @@
     /* profile */
     #profile {
         position: relative;
-        animation: slide 1s ease-out;
+        
     }
     #profile .wrap {
         position: absolute;
@@ -167,26 +167,7 @@
         justify-content: space-between;
         gap: 20px;
     }
-    @keyframes slide {
-        from {
-            left: -100px;
-            opacity: 0;
-        }
-        to {
-            left: 100px;
-            opacity: 1;
-        }
-    }
-    @keyframes disappear {
-        from {
-            left: 100px;
-            opacity: 1;
-        }
-        to {
-            left: -100px;
-            opacity: 0;
-        }
-    }
+  
     #profile .wrap > li {
         width: calc(100% / 3);
         height: 100%;

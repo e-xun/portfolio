@@ -13,27 +13,6 @@ $(function () {
         prevScroll = nowScroll;
     });
 
-    // 프로필 스크롤 //
-    let mainText = document.querySelector("#profile");
-
-    window.addEventListener("scroll", function () {
-        let value = window.scrollY;
-        if (value > 1400) {
-            mainText.style.animation = "disappear 1s ease-out forwards";
-        } else {
-            mainText.style.animation = "slide 1s ease-out";
-        }
-    });
-
-    // 메뉴, 네비 클릭 변경//
-    $("header li").on("click", function () {
-        let i = $(this).index();
-        let target = $("#container section").eq(i).offset().top;
-        console.log(target);
-
-        $("html, body").stop().animate({ scrollTop: target });
-    });
-
     // 모바일메뉴 펼치기//
     $(".icon").on("click", function () {
         $(".nav").slideToggle();
