@@ -12,6 +12,19 @@ $(function () {
         }
         prevScroll = nowScroll;
     });
+
+    // 프로필 스크롤 //
+    let mainText = document.querySelector("#profile");
+
+    window.addEventListener("scroll", function () {
+        let value = window.scrollY;
+        if (value > 1400) {
+            mainText.style.animation = "disappear 1s ease-out forwards";
+        } else {
+            mainText.style.animation = "slide 1s ease-out";
+        }
+    });
+
     // 메뉴, 네비 클릭 변경//
     $("header li").on("click", function () {
         let i = $(this).index();
