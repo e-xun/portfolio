@@ -2,15 +2,31 @@ $(function () {
     // 헤더 메뉴 글자 효과
     Splitting();
 
-    let prevScroll = 0;
+    // 화면 빠르게 바꾸기 //
+    let baseline = -200;
+
+    let con1 = $("#con1").offset().top;
+    let con2 = $("#con2").offset().top + baseline;
+    let con3 = $("#con3").offset().top + baseline;
+    let con4 = $("#con4").offset().top + baseline;
+
+    // console.log(con1, con2, con3, con4);
+
     $(window).on("scroll", function () {
-        let nowScroll = $(window).scrollTop();
-        if (nowScroll > prevScroll) {
-            $("header").addClass("on");
+        let scroll = $(this).scrollTop();
+        // console.log(scroll);
+
+        if (scroll >= con1 && scroll < con2) {
+            // console.log("con1입니다");
+
+            $("#con1").addClass("on");
+        } else if (scroll >= con2 && scroll < con3) {
+            // console.log("con2입니다");
+        } else if (scroll >= con3 && scroll < con4) {
+            // console.log("con3입니다");
         } else {
-            $("header").removeClass("on");
+            // console.log("con4입니다");
         }
-        prevScroll = nowScroll;
     });
 
     // 모바일메뉴 펼치기//
